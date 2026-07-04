@@ -162,7 +162,7 @@
     <section class="card intro-card"><h2 data-i18n="partTwoTitle"></h2><p data-i18n="partTwoP1"></p><div class="table-wrap"><table class="table-like"><thead><tr><th data-i18n="code"></th><th data-i18n="competency"></th><th data-i18n="definition"></th></tr></thead><tbody id="sectionCOverview"></tbody></table></div></section>
     <div id="instrumentQuestions"></div>
 
-    <section class="card intro-card"><h2 data-i18n="partThreeTitle"></h2><p><strong data-i18n="accessProto"></strong>: <a href="https://drandynguyen.github.io/HASRL-C_WritingStudio/" target="_blank" rel="noopener">https://drandynguyen.github.io/HASRL-C_WritingStudio/</a></p><p class="small" data-i18n="prototypeDevelopmentNote"></p><p data-i18n="partThreeP1"></p><h3 data-i18n="experienceTitle"></h3><p data-i18n="experienceIntro"></p><ol><li data-i18n="exp1"></li><li data-i18n="exp2"></li><li data-i18n="exp3"></li><li data-i18n="exp4"></li><li data-i18n="exp5"></li></ol><h3 data-i18n="elicitTitle"></h3><p data-i18n="elicitText"></p><h3 data-i18n="researcherTitle"></h3><p data-i18n="researcherText"></p><h3 data-i18n="exploreTitle"></h3><p data-i18n="exploreText"></p></section>
+    <section class="card intro-card"><h2 data-i18n="partThreeTitle"></h2><p><strong data-i18n="accessProto"></strong>: <a href="https://drandynguyen.github.io/HASRL-C_WritingStudio/" target="_blank" rel="noopener noreferrer">https://drandynguyen.github.io/HASRL-C_WritingStudio/</a></p><p class="small" data-i18n="prototypeDevelopmentNote"></p><p data-i18n="partThreeP1"></p><h3 data-i18n="experienceTitle"></h3><p data-i18n="experienceIntro"></p><ol><li data-i18n="exp1"></li><li data-i18n="exp2"></li><li data-i18n="exp3"></li><li data-i18n="exp4"></li><li data-i18n="exp5"></li></ol><h3 data-i18n="elicitTitle"></h3><p data-i18n="elicitText"></p><h3 data-i18n="researcherTitle"></h3><p data-i18n="researcherText"></p><h3 data-i18n="exploreTitle"></h3><p data-i18n="exploreText"></p></section>
     <div id="prototypeQuestions"></div>
 
     <section class="card intro-card"><h2 data-i18n="wholeTitle"></h2><p data-i18n="wholeP1"></p></section>
@@ -301,6 +301,14 @@ async function submitForm(event){
   finally{ submitButton.disabled = false; }
 }
 document.addEventListener("DOMContentLoaded",()=>{ applyStaticText(); buildDynamic(); document.querySelectorAll(".lang-toggle button").forEach(btn=>btn.addEventListener("click",()=>setLanguage(btn.dataset.lang))); document.getElementById("feedbackForm").addEventListener("submit", submitForm); });
+</script>
+
+<script>
+  // Ensure the HASRL-C Writing Studio link always opens in a new browser tab.
+  document.querySelectorAll('a[href="https://drandynguyen.github.io/HASRL-C_WritingStudio/"]').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
 </script>
 </body>
 </html>
